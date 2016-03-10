@@ -1,0 +1,35 @@
+<h1>Listing assets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Type</th>
+      <th>Alt</th>
+      <th>Attachment width</th>
+      <th>Attachment height</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assets.each do |asset| %>
+      <tr>
+        <td><%= asset.position %></td>
+        <td><%= asset.class_type %></td>
+        <td><%= asset.alt %></td>
+        <td><%= asset.attachment_width %></td>
+        <td><%= asset.attachment_height %></td>
+        <td><%= link_to 'Show', asset %></td>
+        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
+        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Asset', new_asset_path %>

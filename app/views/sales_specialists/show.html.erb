@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Naziv:</strong>
+  <%= @sales_specialist.name %>
+</p>
+
+<p>
+  <strong>Telefon:</strong>
+  <%= @sales_specialist.phone %>
+</p>
+
+<%= link_to 'Edit', edit_sales_specialist_path(@sales_specialist) %> |
+<%= link_to 'Back', sales_specialists_path %>

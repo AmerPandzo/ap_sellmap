@@ -1,0 +1,31 @@
+<h1>Listing komercijalista</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ime i prezime</th>
+      <th>Telefon</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_specialists.each do |sales_specialist| %>
+      <tr>
+        <td><%= sales_specialist.name %></td>
+        <td><%= sales_specialist.phone %></td>
+        <td><%= link_to 'Show', sales_specialist %></td>
+        <td><%= link_to 'Edit', edit_sales_specialist_path(sales_specialist) %></td>
+        <td><%= link_to 'Destroy', sales_specialist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novi komercijalista', new_sales_specialist_path %>
+<br>
+<%= link_to ' Back', locations_path(@location, url_options), :data => {:no_turbolink =>true} %>

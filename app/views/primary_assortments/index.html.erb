@@ -1,0 +1,29 @@
+<h1>Listing primarnih asortimana</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Naziv</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @primary_assortments.each do |primary_assortment| %>
+      <tr>
+        <td><%= primary_assortment.name %></td>
+        <td><%= link_to 'Show', primary_assortment %></td>
+        <td><%= link_to 'Edit', edit_primary_assortment_path(primary_assortment) %></td>
+        <td><%= link_to 'Destroy', primary_assortment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novi primarni asortiman', new_primary_assortment_path %>
+<br>
+<%= link_to 'Back', locations_path(@location, url_options), :data => {:no_turbolink =>true} %>

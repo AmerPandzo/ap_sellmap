@@ -1,0 +1,26 @@
+<%= form_for(@locations_assortment) do |f| %>
+  <% if @locations_assortment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@locations_assortment.errors.count, "error") %> prohibited this locations_assortment from being saved:</h2>
+
+      <ul>
+      <% @locations_assortment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :asortiman %><br>
+    <%= f.collection_select :assortment_id, PrimaryAssortment.all, :id, :name , {:class => 'select_class'}%>
+  </div>
+  <div class="field">
+    <%= f.label :lokacija %><br>
+    <%= f.collection_select :location_id, Location.all, :id, :name , {:class => 'select_class'}%>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Spasi" %>
+  </div>
+<% end %>

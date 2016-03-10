@@ -1,0 +1,28 @@
+<h1>Listing brendova</h1>
+
+<table class="table table-striped">
+
+    <tr>
+      <th>Naziv</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+
+
+    <% @ap_brands.each do |ap_brand| %>
+      <tr>
+        <td><%= ap_brand.name %></td>
+        <td><%= link_to 'Show', ap_brand %></td>
+        <td><%= link_to 'Edit', edit_ap_brand_path(ap_brand) %></td>
+        <td><%= link_to 'Destroy', ap_brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+</table>
+
+<br>
+
+<%= link_to 'Novi brend', new_ap_brand_path %> <br>
+<%= link_to "Back" , root_path %>

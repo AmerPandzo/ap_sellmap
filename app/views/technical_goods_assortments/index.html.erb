@@ -1,0 +1,57 @@
+<h1 style="  margin-left: -280px;">Listing asortimana tehnicke robe</h1>
+
+<table class="table table-striped" style="  margin-left: -280px;">
+  <thead>
+    <tr>
+      <th>Ap1</th>
+      <th>Ap2</th>
+      <th>Ap3</th>
+      <th>Ap4</th>
+      <th>Ap5</th>
+      <th>Ap6</th>
+      <th>Ap7</th>
+      <th>Ap8</th>
+      <th>B1</th>
+      <th>B2</th>
+      <th>B3</th>
+      <th>B4</th>
+      <th>B5</th>
+      <th>B6</th>
+      <th>Lokacija</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @technical_goods_assortments.each do |technical_goods_assortment| %>
+      <tr>
+        <td><%= ApProduct.find(technical_goods_assortment.ap1_id).name %></td>
+        <td><%= ApProduct.find(technical_goods_assortment.ap2_id).name %></td>
+        <td><%= ApProduct.find(technical_goods_assortment.ap3_id).name %></td>
+        <td><%= ApProduct.find(technical_goods_assortment.ap4_id).name %></td>
+        <td><%= ApProduct.find(technical_goods_assortment.ap5_id).name %></td>
+        <td><%= ApProduct.find(technical_goods_assortment.ap6_id).name %></td>
+        <td><%= ApProduct.find(technical_goods_assortment.ap7_id).name %></td>
+        <td><%= ApProduct.find(technical_goods_assortment.ap8_id).name %></td>
+        <td><%= ApBrand.find(technical_goods_assortment.b1_id).name %></td>
+        <td><%= ApBrand.find(technical_goods_assortment.b2_id).name %></td>
+        <td><%= ApBrand.find(technical_goods_assortment.b3_id).name %></td>
+        <td><%= ApBrand.find(technical_goods_assortment.b4_id).name %></td>
+        <td><%= ApBrand.find(technical_goods_assortment.b5_id).name %></td>
+        <td><%= ApBrand.find(technical_goods_assortment.b6_id).name %></td>
+        <td><%= Location.find(technical_goods_assortment.location_id).name %></td>
+        <td><%= link_to 'Show', technical_goods_assortment %></td>
+        <td><%= link_to 'Edit', edit_technical_goods_assortment_path(technical_goods_assortment) %></td>
+        <td><%= link_to 'Destroy', technical_goods_assortment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novi asortiman tehnickih roba', new_technical_goods_assortment_path %>
+ <br>
+<%= link_to 'Back', locations_path(@location, url_options), :data => {:no_turbolink =>true} %>

@@ -1,0 +1,29 @@
+<h1>Listing proizvoda</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Naziv</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ap_products.each do |ap_product| %>
+      <tr>
+        <td><%= ap_product.name %></td>
+        <td><%= link_to 'Show', ap_product %></td>
+        <td><%= link_to 'Edit', edit_ap_product_path(ap_product) %></td>
+        <td><%= link_to 'Destroy', ap_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novi proizvod', new_ap_product_path %>
+<br>
+<%= link_to 'Back', root_path %>

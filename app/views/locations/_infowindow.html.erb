@@ -1,0 +1,84 @@
+<table class="atributi_ul">
+<% locations_assortments = LocationsAssortment.all.where(location_id: location.id) %>
+<% @technical_goods_assortment = TechnicalGoodsAssortment.where(location_id: location.id).first %>
+<tr>
+<th class="th_header"><%= location.name %></th>
+<th class="th_header">Primarni asortiman: <%#= @primarni_asortiman.name %></th>
+<th class="th_header">Prioritetni brendovi: </th>
+</tr>
+<tr>
+<td>Regija: <%= location.region.name %></td>
+<td>
+<% locations_assortments.each do |la| %>
+<% assortment = PrimaryAssortment.all.find(la.assortment_id) %>
+<%= assortment.name %>,
+<% end -%>
+</td>
+</tr>
+<tr>
+<td>Sjediste: <%= location.place.name  %> </td>
+<% ap1 = ApProduct.find(@technical_goods_assortment.ap1_id) %>
+<td>AP1: <%= ap1.name %> </td>
+<% b1 = ApBrand.find(@technical_goods_assortment.b1_id) %>
+<td>B1: <%= b1.name %> </td>
+</tr>
+<tr>
+<td>Karakter kupca: <%= location.customer_character %></td>
+<% ap2 = ApProduct.find(@technical_goods_assortment.ap2_id) %>
+<td>AP2: <%= ap2.name %> </td>
+<% b2 = ApBrand.find(@technical_goods_assortment.b2_id) %>
+<td>B2: <%= b2.name %> </td>
+</tr>
+<tr>
+<td>Kontakt osoba: <%= location.contact %></td>
+<% ap3 = ApProduct.find(@technical_goods_assortment.ap3_id) %>
+<td>AP3: <%= ap3.name %> </td>
+<% b3 = ApBrand.find(@technical_goods_assortment.b3_id) %>
+<td>B3: <%= b3.name %> </td>
+</tr>
+<tr>
+<td>Komercijalista: <%= location.sales_specialist.name %></td>
+<% ap4 = ApProduct.find(@technical_goods_assortment.ap4_id) %>
+<td>AP4: <%= ap4.name %> </td>
+<% b4 = ApBrand.find(@technical_goods_assortment.b4_id) %>
+<td>B4: <%= b4.name %> </td>
+</tr>
+<tr>
+<td>Tel/fax/email: <%= location.tel_fax_email %></td>
+<% ap5 = ApProduct.find(@technical_goods_assortment.ap5_id) %>
+<td>AP5: <%= ap5.name %> </td>
+<% b5 = ApBrand.find(@technical_goods_assortment.b5_id) %>
+<td>B5: <%= b5.name %> </td>
+</tr>
+<tr>
+<td>Tip objekta: <%= location.object_type %></td>
+<% ap6 = ApProduct.find(@technical_goods_assortment.ap6_id) %>
+<td>AP6: <%= ap6.name %> </td>
+<% b6 = ApBrand.find(@technical_goods_assortment.b6_id) %>
+<td>B6: <%= b6.name %> </td>
+</tr>
+<tr>
+<td>Klasifikacija kupca: <%= location.customer_classification %></td>
+<% ap7 = ApProduct.find(@technical_goods_assortment.ap7_id) %>
+<td>AP7: <%= ap7.name %> </td>
+</tr>
+
+<tr>
+<td><%#= image_tag location.avatar.url , size: "185x185" %></td>
+<% ap8 = ApProduct.find(@technical_goods_assortment.ap8_id) %>
+<td>AP8: <%= ap8.name %> </td></tr>
+<div>
+<%# assets = Asset.where(class_type: "Location").where(typeable_id: location.id) %>
+<%# assets.each do |asset| %>
+<%#= image_tag(asset.avatar.url(:home))%>
+<%# end -%>
+</div>
+
+</table>
+<div class="center">
+<% @assets = Asset.where(class_type: "Location").where(typeable_id: location.id) %>
+<%#= render "slider", assets: @assets  %>
+<% @assets.each do |asset| %>
+<div class="slikekojenerade"><a href="/assets/locations/<%= location.id %>/home/<%=asset.avatar_file_name%>" data-lightbox="roadtrip"><%=image_tag(asset.avatar.url(:home) , size:'65x65')%></a></div>
+<% end -%>
+</div>

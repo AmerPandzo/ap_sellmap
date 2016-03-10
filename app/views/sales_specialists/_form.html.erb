@@ -1,0 +1,26 @@
+<%= form_for(@sales_specialist) do |f| %>
+  <% if @sales_specialist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sales_specialist.errors.count, "error") %> prohibited this sales_specialist from being saved:</h2>
+
+      <ul>
+      <% @sales_specialist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Ime i prezime" %><br>
+    <%= f.text_field :name , :class => "form-control"%>
+  </div>
+  <div class="field">
+    <%= f.label :telefon %><br>
+    <%= f.text_field :phone , :class => "form-control"%>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Spasi" %>
+  </div>
+<% end %>

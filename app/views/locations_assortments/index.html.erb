@@ -1,0 +1,31 @@
+<h1>Listing lokacijskih asortimana</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Asortiman</th>
+      <th>Lokacija</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations_assortments.each do |locations_assortment| %>
+      <tr>
+        <td><%= PrimaryAssortment.find(locations_assortment.assortment_id).name %></td>
+        <td><%= Location.find(locations_assortment.location_id).name %></td>
+        <td><%= link_to 'Show', locations_assortment %></td>
+        <td><%= link_to 'Edit', edit_locations_assortment_path(locations_assortment) %></td>
+        <td><%= link_to 'Destroy', locations_assortment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novi lokacijski asortiman', new_locations_assortment_path %>
+<br>
+<%= link_to 'Back', locations_path(@location, url_options), :data => {:no_turbolink =>true} %>

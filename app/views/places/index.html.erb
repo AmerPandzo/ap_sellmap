@@ -1,0 +1,31 @@
+<h1>Listing sjedista</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Naziv</th>
+      <th>Region</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @places.each do |place| %>
+      <tr>
+        <td><%= place.name %></td>
+        <td><%= Region.find(place.region_id).name %></td>
+        <td><%= link_to 'Show', place %></td>
+        <td><%= link_to 'Edit', edit_place_path(place) %></td>
+        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo sjedise', new_place_path %>
+<br>
+<%= link_to 'Back', locations_path(@location, url_options), :data => {:no_turbolink =>true} %>

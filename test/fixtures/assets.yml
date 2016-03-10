@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  position: 1
+  type: 
+  alt: MyText
+  attachment_width: 1
+  attachment_height: 1
+
+two:
+  position: 1
+  type: 
+  alt: MyText
+  attachment_width: 1
+  attachment_height: 1

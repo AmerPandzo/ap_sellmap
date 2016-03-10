@@ -1,0 +1,16 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Locations") do |sheet|
+    sheet.add_row ["ID","Regija", "Sjediste","Naziv objekta","Karakter kupca A, P, K, N","Kontakt","Komercijalista","Tel/Fax/E-mail","Tip Objekta A/B/C/X","Klasifikacija kupca", "Primarni Asortiman", "AP1", "AP2", "AP3", "AP4", "AP5", "AP6", "AP7", "AP8" , "B1", "B2", "B3", "B4", "B5", "B6"]
+    @locations.each do |location|
+    	@la = LocationsAssortment.all.where(location_id: location.id)
+    	@pa =  Hash.new{|hash, key| hash[key] = Array.new} 
+    	@la.each do |l|
+    		@pa[l.location_id].push(PrimaryAssortment.all.where(id: l.assortment_id))
+    	end
+    	@pa1 = @pa[location.id].map { |array| array.map {|p| p.name}}.join(',')
+    	 @technical_goods_assortment = TechnicalGoodsAssortment.where(location_id: location.id).first
+        sheet.add_row [location.id,Region.find(location.region_id).name,Place.find(location.place_id).name,location.name,location.customer_character,location.contact,SalesSpecialist.find(location.sales_specialist_id).name, location.tel_fax_email, location.object_type, location.customer_classification, @pa1 , ApProduct.find(@technical_goods_assortment.ap1_id).name , ApProduct.find(@technical_goods_assortment.ap2_id).name, ApProduct.find(@technical_goods_assortment.ap3_id).name, ApProduct.find(@technical_goods_assortment.ap4_id).name, ApProduct.find(@technical_goods_assortment.ap5_id).name, ApProduct.find(@technical_goods_assortment.ap6_id).name, ApProduct.find(@technical_goods_assortment.ap7_id).name, ApProduct.find(@technical_goods_assortment.ap8_id).name, ApBrand.find(@technical_goods_assortment.b1_id).name, ApBrand.find(@technical_goods_assortment.b2_id).name, ApBrand.find(@technical_goods_assortment.b3_id).name, ApBrand.find(@technical_goods_assortment.b4_id).name, ApBrand.find(@technical_goods_assortment.b5_id).name, ApBrand.find(@technical_goods_assortment.b6_id).name]
+    end
+end
+
+

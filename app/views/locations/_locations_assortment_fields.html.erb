@@ -1,0 +1,81 @@
+
+   <div class="fields">
+   <div class="col-md-6 aplijevo">
+   <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Asortiman proizvoda: </h3>
+  </div>
+  <div class="panel-body">
+   	 <div class="field">
+    <%= f.label :ap1_id %><br>
+    <%= f.collection_select(:ap1_id, ApProduct.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_id %><br>
+    <%= f.collection_select(:ap2_id, ApProduct.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_id %><br>
+    <%= f.collection_select(:ap3_id, ApProduct.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_id %><br>
+    <%= f.collection_select(:ap4_id, ApProduct.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_id %><br>
+    <%= f.collection_select(:ap5_id, ApProduct.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_id %><br>
+    <%= f.collection_select(:ap6_id, ApProduct.all(:order => 'name'), :id, :name, :include_blank => true )%>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_id %><br>
+    <%= f.collection_select(:ap7_id, ApProduct.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_id %><br>
+    <%= f.collection_select(:ap8_id, ApProduct.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  </div>
+  </div>
+</div>
+  <div class="col-md-6 apdesno">
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Asortiman brendova: </h3>
+  </div>
+  <div class="panel-body">
+  <div class="field">
+    <%= f.label :b1_id %><br>
+    <%= f.collection_select(:b1_id, ApBrand.all(:order => 'name'), :id, :name, :include_blank => true )%>
+  </div>
+  <div class="field">
+    <%= f.label :b2_id %><br>
+    <%= f.collection_select(:b2_id, ApBrand.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :b3_id %><br>
+   <%= f.collection_select(:b3_id, ApBrand.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :b4_id %><br>
+ <%= f.collection_select(:b4_id, ApBrand.all(:order => 'name'), :id, :name, :include_blank => true )%>
+  </div>
+  <div class="field">
+    <%= f.label :b5_id %><br>
+   <%= f.collection_select(:b5_id, ApBrand.all(:order => 'name'), :id, :name , :include_blank => true)%>
+  </div>
+  <div class="field">
+    <%= f.label :b6_id %><br>
+  <%= f.collection_select(:b6_id, ApBrand.all(:order => 'name'), :id, :name, :include_blank => true )%>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+        
+        

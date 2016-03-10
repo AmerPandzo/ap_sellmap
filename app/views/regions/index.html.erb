@@ -1,0 +1,29 @@
+<h1>Listing regiona</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Naziv</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @regions.each do |region| %>
+      <tr>
+        <td><%= region.name %></td>
+        <td><%= link_to 'Show', region %></td>
+        <td><%= link_to 'Edit', edit_region_path(region) %></td>
+        <td><%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novi region', new_region_path %>
+<br>
+<%= link_to 'Back', locations_path(@location, url_options), :data => {:no_turbolink =>true} %>

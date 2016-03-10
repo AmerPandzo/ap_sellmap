@@ -1,0 +1,4 @@
+
+StanicmapaprodajaP::Application.config.secret_key_base = '9739c1de0aaa07afe56c37debe3454302012562650fd2c4cacaf48f43138d9391764155dfe7943da170e7fbe9720fae799e34d6b9258b0799673c230
+02ffa185'
+

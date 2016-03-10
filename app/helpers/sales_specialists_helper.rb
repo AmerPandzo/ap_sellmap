@@ -1,0 +1,2 @@
+module SalesSpecialistsHelper
+end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @asset.position %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @asset.class_type %>
+</p>
+
+<p>
+  <strong>Alt:</strong>
+  <%= @asset.alt %>
+</p>
+
+<p>
+  <strong>Attachment width:</strong>
+  <%= @asset.attachment_width %>
+</p>
+
+<p>
+  <strong>Attachment height:</strong>
+  <%= @asset.attachment_height %>
+</p>
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |
+<%= link_to 'Back', assets_path %>

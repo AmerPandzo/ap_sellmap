@@ -1,0 +1,2 @@
+module LocationsAssortmentsHelper
+end

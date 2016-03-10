@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ap1_id: 1
+  ap2_id: 1
+  ap3_id: 1
+  ap4_id: 1
+  ap5_id: 1
+  ap6_id: 1
+  ap7_id: 1
+  ap8_id: 1
+  b1_id: 1
+  b2_id: 1
+  b3_id: 1
+  b4_id: 1
+  b5_id: 1
+  b6_id: 1
+
+two:
+  ap1_id: 1
+  ap2_id: 1
+  ap3_id: 1
+  ap4_id: 1
+  ap5_id: 1
+  ap6_id: 1
+  ap7_id: 1
+  ap8_id: 1
+  b1_id: 1
+  b2_id: 1
+  b3_id: 1
+  b4_id: 1
+  b5_id: 1
+  b6_id: 1

@@ -1,0 +1,115 @@
+<%= simple_nested_form_for @location, :html => { :class => 'form-horizontal', multipart: true } , :validate => true do |f| %>
+
+<div class="lijevapolja">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Nova lokacija: </h3>
+  </div>
+  <div class="panel-body">
+  <div class="field">
+    <%= f.label :naziv %><br>
+    <%= f.input :name, label: false, :input_html => {:class => "form-control" } , validate: { presence: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :adresa %><br>
+    <%= f.input :address , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.input :longitude , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.input :latitude , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+   <div class="field">
+    <%= f.label :region_id %><br>
+   <%= f.association :region ,  label: false, value_method: :id, include_blank: false , :input_html => {:class => "s2"} %>
+  </div>
+  <div class="field">
+    <%= f.label :sjediste %><br>
+    <%= f.association :place , label: false , value_method: :id, include_blank: false , :input_html => {:class => "s2"} %>
+    <%#= f.collection_select :place_id, Place.all, :id, :name , {:class => 'select_class'} , label: false%>
+  </div>
+  </div>
+  </div>
+    <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= f.label :slike %></h3>
+  </div>
+  <div class="panel-body">
+    <%= file_field_tag "avatars[]", type: :file, multiple: true  , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+</div>
+  <div class=" desnapolja">
+  <div class="field">
+    <%= f.label "Karakter kupca A, P, K, N" %><br>
+    <%= f.input :customer_character,:maxlength => 1 , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+  <div class="field">
+    <%= f.label "Kontakt osoba" %><br>
+    <%= f.input :contact, label: false , :input_html => {:class => "form-control" }%>
+  </div>
+  <div class="field">
+    <%= f.label "Komercijalista" %><br>
+    <%= f.association :sales_specialist , label: false , value_method: :id, include_blank: false , :input_html => {:class => "s2"} %>
+  </div>
+    <div class="field">
+    <%= f.label "Tel/Fax/E-mail" %><br>
+    <%= f.input :tel_fax_email , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+    <div class="field">
+    <%= f.label "Tip Objekta A/B/C/X" %><br>
+    <%= f.input :object_type , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+  <div class="field">
+    <%= f.label "Klasifikacija kupca" %><br>
+    <%= f.input :customer_classification,:maxlength => 2 , label: false , :input_html => {:class => "form-control" }%>
+  </div>
+  </div>
+</div>
+
+<div class=" appolja">
+ <table id="technical_goods_assortments">
+  <%= f.fields_for :technical_goods_assortments, :wrapper => false do |la_form| %>
+    <tr class="fields">
+       <%= render "locations_assortment_fields", :f => la_form %>
+    </tr>
+  <% end %>
+</table>
+</div>
+<div style=" margin-left: 968px;
+  width: 171px;
+  position: absolute;
+  top: 104px;">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Primarni asortiman: </h3>
+  </div>
+  <div class="panel-body">
+   <table id="locations_assortments">
+  <%= f.fields_for :locations_assortments, :wrapper => false do |la_form| %>
+    <tr class="fields">
+      <td><%= la_form.label :assortment_id %><br>
+          <%= la_form.collection_select(:assortment_id, PrimaryAssortment.all(:order => 'name'), :id, :name )%></td>
+
+      <td><div style="  margin-top: 15px;"><%= la_form.link_to_remove "-" , {:style => 'font-size: 25pt;margin-left: 10px;'}%></div></td>
+    </tr>
+  <% end %>
+</table>
+<p style="font-size:25pt;margin-left: 48px;"><%= f.link_to_add "+", :locations_assortments, :data => { :target => "#locations_assortments" } %></p>
+</div>
+</div>
+</div>
+<div class="col-md-12" style="  position: absolute;
+  top: 730px;
+  width: 602px;
+  margin-left: -18px;">
+  <div class="actions1">
+<%= link_to 'Back', locations_path(@location, url_options), :data => {:no_turbolink =>true}   %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit ,  "Spasi" , class: 'dume'%>
+  </div>
+  </div>
+<% end %>

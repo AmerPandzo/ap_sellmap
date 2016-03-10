@@ -1,0 +1,12 @@
+<table  class="table table-hover">
+  <tr>
+    <th style="text-align:center;">Naziv</th>
+  </tr>
+  <% @locations.each do |u| %>
+  <tr style="height:30px;width:180px;text-align:center;">
+   <td><%= u.name %></td>
+  <% end %>
+ </tr>
+</table>
+
+<%= link_to 'Back', root_path(@location, url_options), :data => {:no_turbolink =>true} %>

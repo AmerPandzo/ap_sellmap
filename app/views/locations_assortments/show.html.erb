@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asortiman:</strong>
+  <%= @locations_assortment.assortment_id %>
+</p>
+
+<p>
+  <strong>Lokacija:</strong>
+  <%= @locations_assortment.location_id %>
+</p>
+
+<%= link_to 'Edit', edit_locations_assortment_path(@locations_assortment) %> |
+<%= link_to 'Back', locations_assortments_path %>

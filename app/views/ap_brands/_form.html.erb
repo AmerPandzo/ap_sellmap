@@ -1,0 +1,22 @@
+<%= form_for(@ap_brand) do |f| %>
+  <% if @ap_brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ap_brand.errors.count, "error") %> prohibited this ap_brand from being saved:</h2>
+
+      <ul>
+      <% @ap_brand.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :naziv %><br>
+    <%= f.text_field :name , :class => "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
