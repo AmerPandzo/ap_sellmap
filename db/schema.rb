@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20150611110011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "adminpack"
 
   create_table "ap_brands", force: true do |t|
     t.string   "name"
@@ -42,6 +41,14 @@ ActiveRecord::Schema.define(version: 20150611110011) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "typeable_id"
+  end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "locations", force: true do |t|
