@@ -1,4 +1,4 @@
-# ap_sellmap
+# SellMaps
 
 Application developed using Gmaps javascript API v3 and Ruby on Rails v 4.0.0 (ruby version 1.9.3) and PostgreSQL database
 
