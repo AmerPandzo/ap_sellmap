@@ -8,3 +8,6 @@ In this google maps application we are able to:
 - filter locations based on regions , stations , primary assortments
 - add images for certain location
 - display location parameters etc
+
+
+Feel free to contribute #hacktoberfest.
