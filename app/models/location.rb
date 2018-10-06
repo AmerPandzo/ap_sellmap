@@ -19,7 +19,7 @@ class Location < ActiveRecord::Base
   has_many :locations_assortments , :dependent => :destroy
   has_many :technical_goods_assortments, :dependent => :destroy
   has_many :assets , :dependent => :destroy ,  :foreign_key => 'typeable_id'
-  has_many :ap_products , :through => :technical_goods_assortments
+  has_many :products , :through => :technical_goods_assortments
   accepts_nested_attributes_for :assets, allow_destroy: true
   accepts_nested_attributes_for :locations_assortments, allow_destroy: true
   accepts_nested_attributes_for :technical_goods_assortments, allow_destroy: true

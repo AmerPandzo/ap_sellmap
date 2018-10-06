@@ -16,9 +16,9 @@ end
 
   resources :technical_goods_assortments
 
-  resources :ap_brands
+  resources :brands
 
-  resources :ap_products
+  resources :products
 
   resources :primary_assortments
 
