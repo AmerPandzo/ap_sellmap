@@ -11,12 +11,12 @@
   </thead>
 
   <tbody>
-    <% @ap_products.each do |ap_product| %>
+    <% @products.each do |product| %>
       <tr>
-        <td><%= ap_product.name %></td>
-        <td><%= link_to 'Show', ap_product %></td>
-        <td><%= link_to 'Edit', edit_ap_product_path(ap_product) %></td>
-        <td><%= link_to 'Destroy', ap_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= product.name %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,6 +24,6 @@
 
 <br>
 
-<%= link_to 'Novi proizvod', new_ap_product_path %>
+<%= link_to 'Novi proizvod', new_product_path %>
 <br>
 <%= link_to 'Back', root_path %>

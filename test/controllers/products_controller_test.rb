@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ApProductsControllerTest < ActionController::TestCase
   setup do
-    @ap_product = ap_products(:one)
+    @product = products(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:ap_products)
+    assert_not_nil assigns(:products)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class ApProductsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create ap_product" do
+  test "should create product" do
     assert_difference('ApProduct.count') do
-      post :create, ap_product: { name: @ap_product.name }
+      post :create, product: { name: @product.name }
     end
 
-    assert_redirected_to ap_product_path(assigns(:ap_product))
+    assert_redirected_to product_path(assigns(:product))
   end
 
-  test "should show ap_product" do
-    get :show, id: @ap_product
+  test "should show product" do
+    get :show, id: @product
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @ap_product
+    get :edit, id: @product
     assert_response :success
   end
 
-  test "should update ap_product" do
-    patch :update, id: @ap_product, ap_product: { name: @ap_product.name }
-    assert_redirected_to ap_product_path(assigns(:ap_product))
+  test "should update product" do
+    patch :update, id: @product, product: { name: @product.name }
+    assert_redirected_to product_path(assigns(:product))
   end
 
-  test "should destroy ap_product" do
+  test "should destroy product" do
     assert_difference('ApProduct.count', -1) do
-      delete :destroy, id: @ap_product
+      delete :destroy, id: @product
     end
 
-    assert_redirected_to ap_products_path
+    assert_redirected_to products_path
   end
 end

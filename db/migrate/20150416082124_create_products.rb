@@ -1,6 +1,6 @@
 class CreateApProducts < ActiveRecord::Migration
   def change
-    create_table :ap_products do |t|
+    create_table :products do |t|
       t.string :name
 
       t.timestamps

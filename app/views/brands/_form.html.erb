@@ -1,10 +1,10 @@
-<%= form_for(@ap_brand) do |f| %>
-  <% if @ap_brand.errors.any? %>
+<%= form_for(@brand) do |f| %>
+  <% if @brand.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ap_brand.errors.count, "error") %> prohibited this ap_brand from being saved:</h2>
+      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
 
       <ul>
-      <% @ap_brand.errors.full_messages.each do |msg| %>
+      <% @brand.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

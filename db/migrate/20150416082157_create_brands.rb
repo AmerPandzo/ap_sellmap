@@ -1,6 +1,6 @@
 class CreateApBrands < ActiveRecord::Migration
   def change
-    create_table :ap_brands do |t|
+    create_table :brands do |t|
       t.string :name
 
       t.timestamps
