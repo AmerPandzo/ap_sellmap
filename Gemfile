@@ -44,7 +44,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo', '~> 0.3.37'
 gem 'gmaps4rails'
-gem 'haml', '~> 4.0.6'
+gem 'haml', '~> 5.1.2'
 gem 'autoprefixer-rails'
 #gem 'strong_parameters'
 gem 'protected_attributes'
